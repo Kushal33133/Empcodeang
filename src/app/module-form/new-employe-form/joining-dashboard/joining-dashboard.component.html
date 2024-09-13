@@ -1,0 +1,22 @@
+
+<div class="main-div">
+<!-- <div style="align-items: center;
+display: flex;
+justify-content: center;
+background-color: #f9f9f9;">
+    <img src="../../../../assets/logo10.png" alt="logo">
+</div> -->
+<div class="choose-form-container" >
+
+    <div class="form-option left-option" (click)="navigateTo('/newemloyeform/screening')">
+-      <h2>Go to Screening Form</h2>
+      <p>Click here to proceed to the Screening Form.</p>
+    </div>
+  
+    <div class="form-option right-option" (click)="navigateTo('/newemloyeform/empdocupload')" *ngIf="hidemodal">
+-      <h2>Go to Document Upload Form</h2>
+      <p>Click here to proceed to the Document Upload Form.</p>
+    </div>
+  </div>
+
+</div>

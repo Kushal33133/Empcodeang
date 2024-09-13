@@ -1,0 +1,136 @@
+<h2 mat-dialog-title> Report</h2>
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-md-2">
+            <p>Export Options</p>
+            <p><img src="https://img.icons8.com/color/48/000000/ms-excel.png"></p>
+        </div>
+
+        <!-- <div class="col-md-3">
+            <div class="form-group">
+                <label>Choose Filter</label>
+                <select class="form-control cnInput" id="frieght" name="Filter" [(ngModel)]="Filter"
+                    (change)="FilterChoose()">
+                    <option *ngFor="let Choice of DropDown.FilterOption" [ngValue]="Choice">
+                        {{Choice}}
+                    </option>
+                </select>
+            </div>
+        </div> -->
+        <div class="col-md-6">
+
+            <div [ngSwitch]="Filter">
+                <div *ngSwitchCase="'Custom'">
+                    <label for="">Custom Filter</label>
+                    <input class="form-control" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </div>
+                <div *ngSwitchCase="'Range Wise'" class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Select Column</label>
+                            <select class="form-control cnInput" id="frieght" name="SelectedColumn"
+                                [(ngModel)]="SelectedColumn">
+                                <option *ngFor="let d of checkdata" [ngValue]="d">
+                                    {{d}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>From</label>
+                            <input type="text" maxlength="10" name="from" [(ngModel)]="from" placeholder="From"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>To</label>
+                            <input type="text" maxlength="10" name="to" [(ngModel)]="to" placeholder="To"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-danger" (click)="FilterByRange()">Filter</button>
+                    </div>
+
+                </div>
+                <div *ngSwitchCase="'Custom Excel'">
+
+
+                    <mat-form-field>
+                        <mat-label>Choose Column</mat-label>
+
+                        <mat-select [(ngModel)]="SelectExcel" multiple (selectionChange)="CustomExcel()">
+                            <mat-select-trigger>
+                                {{SelectExcel ? SelectExcel[0] : ''}}
+                                <span *ngIf="SelectExcel?.length > 1" class="example-additional-selection">
+                                    (+{{SelectExcel.length - 1}} {{SelectExcel?.length === 2 ? 'other' : 'others'}})
+                                </span>
+                            </mat-select-trigger>
+                            <mat-option *ngFor="let d of checkdata" [value]="d">{{d}}</mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                    <b class="text-danger">*Choose columns that you don't want in excel</b>
+                </div>
+                <!-- <div *ngSwitchCase="'Column Search'" class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Select Column</label>
+                            <select class="form-control cnInput" id="frieght" name="SelectedColumn"
+                                [(ngModel)]="SelectedColumn">
+                                <option *ngFor="let d of checkdata" [ngValue]="d">
+                                    {{d}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Search</label>
+                            <input type="text" maxlength="10" name="ColumnFilter" [(ngModel)]="ColumnFilter"
+                                placeholder="Type Here" class="form-control" (keyup)="applyColumnwise($event.target.value)" >
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 tinytable">
+
+        <ng-container *ngFor="let d of checkdata" matColumnDef="{{d}}">
+
+            <th [hidden]="d==='AutoNo'" mat-header-cell *matHeaderCellDef mat-sort-header>{{d}}
+            </th>
+            <td [hidden]="d==='AutoNo'" mat-cell *matCellDef="let element"> {{element[d]}} </td>
+
+
+        </ng-container>
+
+
+
+        <!-- Below Colunm doesn't show -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions </th>
+            <td mat-cell *matCellDef="let element">
+                <input class="editBtn" type="image" src="../../../../assets/edit-solid.svg" [disabled]="!Edit"
+                    (click)="SelectedRaw(element)" alt="Edit">
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- <tr mat-header-row *matHeaderRowDef="getDisplayedColumns()"></tr>
+        <tr mat-row *matRowDef="let row; columns: getDisplayedColumns();"></tr> -->
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="ClosedDialog()" mat-raised-button color="accent">Closed</button>
+
+</mat-dialog-actions>

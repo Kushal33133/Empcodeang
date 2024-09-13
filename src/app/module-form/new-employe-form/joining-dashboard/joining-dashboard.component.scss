@@ -1,0 +1,64 @@
+.choose-form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Keeps the light background color */
+    background-image: url('../../../../assets/shipping-2.jpg'); /* Replace with your background image path */
+    background-size: cover; /* Ensures the background image covers the entire container */
+    background-position: center; /* Centers the background image */
+    border-radius: 8px;
+    position: relative; 
+
+    height: 100vh;
+  }
+  
+  .form-option {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Ensures it stays on top of the background */
+    z-index: 1; /* Stays above the background image */
+  }
+  
+  .form-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .left-option {
+    background-color: #e8f5e9;
+  }
+  
+  .right-option {
+    background-color: #e3f2fd;
+  }
+  
+  .option-icon {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 10px;
+  }
+  
+  .form-option h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .form-option p {
+    color: #666;
+    margin-bottom: 0;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .choose-form-container {
+      flex-direction: column;
+    }
+  }
+  

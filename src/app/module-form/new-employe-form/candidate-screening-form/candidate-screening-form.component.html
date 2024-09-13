@@ -1,0 +1,800 @@
+<a href="http://localhost:1234/newemloyeform/joindash" style="    padding: 0px 25px;
+">Back to Menu</a>
+
+<div class="stepper-container">
+  <h3>Candidate Screening Form</h3>
+  <div class="step-indicator">
+    <div [class.active]="currentStep === 1">Personal Details</div>
+    <div [class.active]="currentStep === 2">Education & Work Exp</div>
+    <div [class.active]="currentStep === 3">Declaration</div>
+    <!-- <div [class.active]="currentStep === 4">Step 4</div> -->
+  </div>
+
+  <div *ngIf="currentStep === 1" class="step-content">
+    <h3>Personal Details</h3>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder="dfgtdhfftgh"
+          value="Interview"
+          readonly
+          name="CandidateScreeningForm.candidatePurpose"
+          [(ngModel)]="CandidateScreeningForm.candidatePurpose"
+        />
+        <label>Purpose</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candidateMeet"
+          [(ngModel)]="CandidateScreeningForm.candidateMeet"
+        />
+        <label>Meet Who?</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candidatePositionApplied"
+          [(ngModel)]="CandidateScreeningForm.candidatePositionApplied"
+        />
+        <label>Postion applied</label>
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candidateLocation"
+          [(ngModel)]="CandidateScreeningForm.candidateLocation"
+        />
+        <label>Location</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.CandidateFirstName"
+          [(ngModel)]="CandidateScreeningForm.CandidateFirstName"
+        />
+        <label>Full Name</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.CandiateFatherName"
+          [(ngModel)]="CandidateScreeningForm.CandiateFatherName"
+        />
+        <label>Father's Name</label>
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candiateAddress"
+          [(ngModel)]="CandidateScreeningForm.candiateAddress"
+        />
+        <label>Current Address</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candiateState"
+          [(ngModel)]="CandidateScreeningForm.candiateState"
+        />
+        <label>State</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candiateCity"
+          [(ngModel)]="CandidateScreeningForm.candiateCity"
+        />
+        <label>City</label>
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input
+          type="number"
+          placeholder=""
+          name="CandidateScreeningForm.candiatePhone"
+          [(ngModel)]="CandidateScreeningForm.candiatePhone"
+        />
+        <label>Phone No.</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.candidateEmail"
+          [(ngModel)]="CandidateScreeningForm.candidateEmail"
+        />
+        <label>E-mail Id</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="date"
+          placeholder=""
+          name="CandidateScreeningForm.candidateDateofBirth"
+          ngModel="CandidateScreeningForm.candidateDateofBirth"
+        />
+        <label>DOB</label>
+      </div>
+    </div>
+    <div class="special-previ" id="special-previs">
+      <div class="label-float" style="width: -webkit-fill-available;">
+        <select
+        id="CandiMartial"
+        name="CandidateScreeningForm.candidateMartialStatus"
+        [(ngModel)]="CandidateScreeningForm.candidateMartialStatus"
+  
+      >
+        <option value="" selected disabled style="font-weight: bold;">Marital Status</option>
+        <option *ngFor="let candistatus of candidateStatus">
+          {{ candistatus }}
+        </option>
+      </select>
+        <!-- <label>Marital Status</label> -->
+      </div>
+      <div class="label-float">
+        <input
+          type="number"
+          placeholder=""
+          name="CandidateScreeningForm.candidateAadhar"
+          [(ngModel)]="CandidateScreeningForm.candidateAadhar"
+        />
+        <label>Candidate Aadhar</label>
+      </div>
+    </div>
+
+    <div class="step-content">
+      <h3>Assesments</h3>
+      <div
+        style="
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+        "
+        class="person-detail"
+      >
+        <div class="label-float">
+          <input
+            type="number"
+            placeholder=""
+            name="totalExperience"
+            [(ngModel)]="CandidateScreeningForm.totalExperience"
+          />
+          <label>Total Experience</label>
+        </div>
+        <div class="label-float">
+          <input
+            type="number"
+            placeholder=""
+            name="currentPackage"
+            [(ngModel)]="CandidateScreeningForm.currentPackage"
+          />
+          <label>Current CTC</label>
+        </div>
+        <div class="label-float">
+          <input
+            type="number"
+            placeholder=""
+            name="expectedPackage"
+            [(ngModel)]="CandidateScreeningForm.expectedPackage"
+          />
+          <label>Expected CTC</label>
+        </div>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+        "
+        class="person-detail"
+      >
+        <div class="label-float">
+          <input
+            type="text"
+            placeholder=""
+            name="CandidateScreeningForm.reason"
+            [(ngModel)]="CandidateScreeningForm.reason"
+          />
+          <label>Reason of Leaving</label>
+        </div>
+        <div class="label-float">
+          <input
+            type="text"
+            placeholder=""
+            name="CandidateScreeningForm.noticePeriod"
+            [(ngModel)]="CandidateScreeningForm.noticePeriod"
+          />
+          <label>Notice Period</label>
+        </div>
+        <div class="label-float">
+          <input
+            type="text"
+            placeholder=""
+            name="CandidateScreeningForm.nativePlace"
+            [(ngModel)]="CandidateScreeningForm.nativePlace"
+          />
+          <label>Native Place</label>
+        </div>
+      </div>
+      <div
+      style="
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      "
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.currentLocation"
+          [(ngModel)]="CandidateScreeningForm.currentLocation"
+        />
+        <label>Current location</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.fatherOccupation"
+          [(ngModel)]="CandidateScreeningForm.occupation"
+        />
+        <label>Father's Occupation</label>
+      </div>
+      <div class="label-float">
+        <input
+          type="text"
+          placeholder=""
+          name="CandidateScreeningForm.motherOccupation"
+          [(ngModel)]="CandidateScreeningForm.motherOccupation"
+        />
+        <label>Mother's Occupation</label>
+      </div>
+    </div>
+    <div
+    style="
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    "
+    class="person-detail"
+  >
+    <div class="label-float">
+      <input
+        type="number"
+        placeholder=""
+        name="CandidateScreeningForm.noOfSiblings"
+        [(ngModel)]="CandidateScreeningForm.noOfSiblings"
+      />
+      <label>No of Siblings</label>
+    </div>
+    <div class="label-float">
+      <input
+        type="text"
+        placeholder=""
+        name="CandidateScreeningForm.openForPan"
+        [(ngModel)]="CandidateScreeningForm.openForPan"
+      />
+      <label>Open for PAN India</label>
+    </div>
+    <div class="label-float">
+      <input
+      style="width: 0;"
+        type="file"
+        (change)="handleInputChange($event)" 
+      />
+      <label>Resume</label>
+    </div>
+  </div>
+      <!-- <div
+     style="display: flex; justify-content: space-evenly; align-items: center"
+   >
+     <div class="label-float">
+       <input type="file" placeholder="" />
+       <label>Resume Upload</label>
+     </div>
+   </div> -->
+    </div>
+  </div>
+
+  <div *ngIf="currentStep === 2" class="step-content">
+    <h3>Educational Qualifications</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Qualification</th>
+          <th>Degree</th>
+          <th>Institute</th>
+          <th>PassingYear</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+          <!-- Dropdown for the first field -->
+          <td>
+            <select [(ngModel)]="row.Qualification" name="type-{{ i }}">
+                <option value="matix">Matrix</option>
+                <option value="10+2">10+2</option>
+                <option value="Graduation">Graduation</option>
+                <option value="PostGraduation">Post Graduation</option>
+                <option value="Certification">Certification</option>
+
+            </select>
+          </td>
+          <!-- Inputs for the other fields -->
+          <td><input [(ngModel)]="row.Degree" name="name-{{ i }}" /></td>
+          <td>
+            <input [(ngModel)]="row.Institute" name="age-{{ i }}" type="text" />
+          </td>
+          <td>
+            <input [(ngModel)]="row.PassingYear" name="email-{{ i }}" type="email" />
+          </td>
+          <td><input [(ngModel)]="row.Grade" name="phone-{{ i }}" /></td>
+          <td>
+            <button type="button" (click)="addRow()" class="add-btn-ed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#5f6368"
+              >
+                <path
+                  d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              (click)="removeRow(i)"
+              [hidden]="i === 0"
+              class="del-btn-ed"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#5f6368"
+              >
+                <path
+                  d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                />
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="work-experience-container">
+      <h3>Previous Work Experience</h3>
+      <div class="radio-options">
+        <label
+          ><input
+            type="radio"
+            name="CandidateScreeningForm.candidatePrevExperience"
+            [ngModel]="CandidateScreeningForm.candidatePrevExperience"
+            value="Yes"
+            (change)="onWork($event)"
+            required
+          />
+          Yes</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="CandidateScreeningForm.candidatePrevExperience"
+            [ngModel]="CandidateScreeningForm.candidatePrevExperience"
+            value="No"
+            (change)="onWork($event)"
+            checked
+            required
+          />
+          No</label
+        >
+      </div>
+    </div>
+
+    <div [hidden]="
+    CandidateScreeningForm.candidatePrevExperience === 'No' ||
+    !CandidateScreeningForm.candidatePrevExperience
+  ">
+      <table class="tinytable">
+        <thead>
+          <tr>
+            <th rowspan="2">Organization</th>
+            <th rowspan="2">Designation</th>
+            <th colspan="2">Duration</th>
+            <th rowspan="2">Reporting Senior's Name & Tel No.</th>
+            <th rowspan="2">HR Manager Name & Tel No</th>
+            <th rowspan="2">Reason for Leaving</th>
+            <th>Action</th>
+          </tr>
+          <tr class="tablesubhead">
+            <th class="option1list">From</th>
+            <th class="optionlist">To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let exp of ExperienceArray; let i = index">
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.Organization"
+                name="organization-{{ i }}"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.Designation"
+                name="designation-{{ i }}"
+              />
+            </td>
+            <td class="optionlist">
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.FromValue"
+                name="fromValue-{{ i }}"
+                placeholder="01/Jan/YYYY"
+              />
+            </td>
+            <td class="optionlist">
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.ToValue"
+                name="toValue-{{ i }}"
+                placeholder="01/Jan/YYYY"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.ReportingSenior"
+                name="reportingSenior-{{ i }}"
+                maxlength="10"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.HRmanager"
+                name="hrManager-{{ i }}"
+                maxlength="10"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                [(ngModel)]="exp.reasonforleaving"
+                name="reasonForLeaving-{{ i }}"
+              />
+            </td>
+            <td class="text-center">
+              <button
+                (click)="addExperience()"
+                class="add-btn-ed"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#5f6368"
+                >
+                  <path
+                    d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                  />
+                </svg>
+              </button>
+              <button
+                *ngIf="ExperienceArray.length > 1"
+                (click)="removeExperience(i)"
+                class="del-btn-ed"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#5f6368"
+                >
+                  <path
+                    d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h3>Additional Information</h3>
+    </div>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input type="text" placeholder=""   name="CandidateScreeningForm.currentCompensation"
+        [(ngModel)]="CandidateScreeningForm.currentCompensation" />
+        <label>Current Conpenstion</label>
+      </div>
+      <div class="label-float">
+        <input type="text" placeholder="" 
+        name="CandidateScreeningForm.paFixes"
+        [(ngModel)]="CandidateScreeningForm.paFixes"
+        />
+        <label>P.A Fixes</label>
+      </div>
+      <div class="label-float">
+        <input type="text" placeholder="" 
+        name="CandidateScreeningForm.Variable"
+        [(ngModel)]="CandidateScreeningForm.Variable"
+        />
+        <label>Variable</label>
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input type="text" placeholder=""     name="CandidateScreeningForm.benefits"
+        [(ngModel)]="CandidateScreeningForm.benefits"/>
+        <label>Other Perks</label>
+      </div>
+      <div class="label-float">
+        <input type="text" placeholder=""  name="CandidateScreeningForm.Joiningtime"
+        [(ngModel)]="CandidateScreeningForm.Joiningtime"/>
+        <label>Joining Time Required</label>
+      </div>
+      <div class="label-float">
+        <input type="text" placeholder="" 
+        name="CandidateScreeningForm.expectedSalary"
+        [(ngModel)]="CandidateScreeningForm.expectedSalary"/>
+        <label>Expected Salary Rs</label>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="currentStep === 3" class="step-content">
+    <h3>
+      Professional reference
+      <span style="font-size: medium"
+        >(with Name, Designation, Company & Contact details)</span
+      >
+    </h3>
+    <div>
+      <table class="tinytable">
+        <thead>
+          <tr>
+            <th>Emp Code</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Company</th>
+            <th>Tel No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.employeeCode1"
+                [(ngModel)]="CandidateScreeningForm.employeeCode1"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceName1"
+            [(ngModel)]="CandidateScreeningForm.referenceName1"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceDesignation1"
+            [(ngModel)]="CandidateScreeningForm.referenceDesignation1"
+             
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceCompany1"
+                [(ngModel)]="CandidateScreeningForm.referenceCompany1"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceTelNo1"
+                [(ngModel)]="CandidateScreeningForm.referenceTelNo1"
+                maxlength="10"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="tinytable">
+        <thead>
+          <tr>
+            <th>Emp Code</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Company</th>
+            <th>Tel No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.employeeCode2"
+                [(ngModel)]="CandidateScreeningForm.employeeCode2"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceName2"
+                [(ngModel)]="CandidateScreeningForm.referenceName2"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceDesignation2"
+                [(ngModel)]="CandidateScreeningForm.referenceDesignation2"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceCompany2"
+            [(ngModel)]="CandidateScreeningForm.referenceCompany2"
+              />
+            </td>
+            <td>
+              <input
+                class="tableinput"
+                type="text"
+                name="CandidateScreeningForm.referenceTelNo2"
+                [(ngModel)]="CandidateScreeningForm.referenceTelNo2"
+                maxlength="10"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Declaration</h3>
+      <p style="margin-left: 1.5rem">
+        I declare that the infromation given above is true to the best of my
+        knowledge & I understand that any false information, misrepresentation
+        or omission of facts in this application, or any other company record
+        may result in my immediate dismissal without notice even if subsequently
+        employed.
+      </p>
+    </div>
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      class="person-detail"
+    >
+      <div class="label-float">
+        <input
+        type="text"
+        class="form-control"
+        id="candidateplace"
+        placeholder=""
+        name="CandidateScreeningForm.candidateplace"
+        [(ngModel)]="CandidateScreeningForm.candidateplace"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+        <label>Place</label>
+      </div>
+      <div class="label-float">
+        <input
+        type="text"
+        class="form-control"
+        id="candidatesignature"
+        placeholder=""
+        name="CandidateScreeningForm.candidatesignature"
+        [(ngModel)]="CandidateScreeningForm.candidatesignature"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+        <label>Sign. of Applicant</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="currentStep === 4" class="step-content">
+    <h3>Step 4</h3>
+    <input
+      type="password"
+      placeholder="Enter your password"
+      [(ngModel)]="formData.password"
+    />
+  </div> -->
+
+  <div class="button-container">
+    <button (click)="previousStep()" [disabled]="currentStep === 1">
+      Previous
+    </button>
+    <button (click)="nextStep()" [disabled]="currentStep === 3"     
+    
+    
+ 
+    >Next</button>
+    <button *ngIf="currentStep === 3" (click)="save()" >Submit</button>
+  </div>
+</div>
+<!-- [disabled]="
+!CandidateScreeningForm.candidateLocation ||
+!CandidateScreeningForm.CandidateFirstName ||
+!CandidateScreeningForm.CandiateFatherName ||
+!CandidateScreeningForm.candiateAddress ||
+!CandidateScreeningForm.candiateState ||
+!CandidateScreeningForm.candiateCity ||
+!CandidateScreeningForm.candiatePhone ||
+!CandidateScreeningForm.candidateEmail ||
+!CandidateScreeningForm.candidateMartialStatus
+" -->

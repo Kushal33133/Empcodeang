@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="row main">
+  <div class="col-sm-2 col-lg-2">
+    <div id="mySidenav" class="sidenav">
+      <div id="left" class="co-left animated fadeInLeft">
+        <div class="text-right">
+          <i
+            class="fa fa-times-circle-o fa-3x hide-left"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <ul class="list-unstyled">
+          <li class="co-li-first text-center">
+            <span class="co-blue"
+              ><img src="assets/images/add-user.png" /><br />
+              Welcome<br /></span
+            ><span class="co-blue">{{ userDetails }}</span>
+          </li>
+          <li>
+            <a href="home" [routerLink]="['/dashboard']"
+              ><i class="fa fa-home" aria-hidden="true"></i
+              ><span class="co-blue">Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="home" [routerLink]="['upload']"
+              ><i class="fa fa-upload" aria-hidden="true"></i
+              ><span class="co-blue">Bulk Upload</span></a
+            >
+          </li>
+          <li>
+            <a href="settings" [routerLink]="['update']"
+              ><i class="fa fa-file" aria-hidden="true"></i
+              ><span class="co-blue">Update docket</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="http://omsanchar.omlogistics.co.in/printSticker/domino"
+              target="_black"
+              ><i class="fa fa-print" aria-hidden="true"></i
+              ><span class="co-blue">Print stickers</span></a
+            >
+          </li>
+          <!-- <li><a (click)="onMisClick(6)"><i class="fa fa-list" aria-hidden="true"></i><span class="co-blue">All MIS Report</span></a></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-10 col-lg-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

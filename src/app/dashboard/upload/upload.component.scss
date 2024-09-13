@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+}
+
+.form-control-file {
+    width: auto;
+    border: thin solid gray;
+    padding: 10px;
+    box-shadow: 2px 2px gray;
+}
+
+.datatable {
+    overflow: auto;
+    margin: 10px;
+}
+
+.allow {
+    color: green;
+}
+
+.disallow {
+    color: red;
+}
+.mt-10{
+  margin-top: 5rem;
+}

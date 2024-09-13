@@ -1,0 +1,177 @@
+<br/>
+<br/>
+<p class="text-right"  id="mt-10">
+  Dashboard as on
+  <span style="font-weight: bold; text-decoration: underline">{{
+    date | date: "medium"
+  }}</span>
+</p>
+<br />
+
+
+    <div class="row main" style="display: flex; justify-content: left">
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3" (click)="onMisClick(1)">
+        <div class="card border-info mx-sm-1 p-2 card-blue tbook">
+          <div
+            class="card border-info shadow text-info p-3 my-card white-text-bold card-blue"
+          >
+            <span class="fa fa-file" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">TOTAL BOOKING RECIEVED</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1 id="counter2">{{ total }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3" (click)="onMisClick(2)">
+        <div class="card border-info mx-sm-1 p-2 orange">
+          <div
+            class="card border-info shadow text-info p-3 my-card orange white-text-bold"
+          >
+            <span class="fa fa-truck" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">IN-TRANSIT</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1>{{ intransit }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3">
+        <div class="card border-info mx-sm-1 p-2 card-red">
+          <div
+            class="card border-info shadow text-info p-3 my-card card-red white-text-bold"
+          >
+            <span class="fa fa-times" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">HOLD</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1>{{ hold }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3" (click)="onMisClick(3)">
+        <div class="card border-info mx-sm-1 p-2 green">
+          <div
+            class="card border-info shadow text-info p-3 my-card green white-text-bold"
+          >
+            <span class="fa fa-check" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">OUT FOR DELIVERY</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1>{{ outdly }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3" (click)="onMisClick(4)">
+        <div class="card border-info mx-sm-1 p-2 green">
+          <div
+            class="card border-info shadow text-info p-3 my-card green white-text-bold"
+          >
+            <span class="fa fa-check" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">DELIVERED</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1>{{ dly }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3" (click)="onMisClick(5)">
+        <div class="card border-info mx-sm-1 p-2 green">
+          <div
+            class="card border-info shadow text-info p-3 my-card green white-text-bold"
+          >
+            <span class="fa fa-check" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">POD RECIEVED</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1>{{ pod }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 col-lg-3 col-md-3 text-left mb-3" (click)="onMisClick(6)">
+        <div class="card border-info mx-sm-1 p-2 sea-green">
+          <div
+            class="card border-info shadow text-info p-3 my-card sea-green white-text-bold"
+          >
+            <span class="fa fa-check" aria-hidden="true"></span>
+          </div>
+          <div class="text-info text-center mt-3 white-text-bold">
+            <h4 class="no-margin">ALL MIS REPORT</h4>
+          </div>
+          <div class="text-info text-center mt-2 white-text-bold">
+            <h1><i class="fa fa-list"></i></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- <br />
+<div style="display: flex; justify-content: center">
+  <button class="btn btn-success" [routerLink]="['upload']">
+    <i class="fa fa-upload"></i>
+    Bulk Upload</button
+  >&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-success" [routerLink]="['update']">
+    <i class="fa fa-file" aria-hidden="true"></i>
+    Update Docket</button
+  >&nbsp;&nbsp;&nbsp;
+  <a
+    class="btn btn-success"
+    href="http://omsanchar.omlogistics.co.in/printSticker/domino"
+    target="_black"
+  >
+    <i class="fa fa-print"></i> Print Stickers</a
+  >&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-success" (click)="onMisClick(6)">
+    <i class="fa fa-list"></i> All MIS Report
+  </button>
+</div> -->
+
+<dialog #dialog id="favDialog">
+  <h2 class="text-center">
+    <i class="fa fa-clipboard"></i><br />{{ reportTitle }} MIS Report
+  </h2>
+  <form method="dialog" [formGroup]="form">
+    <p>
+      <label
+        >Start Date:
+        <input type="date" name="fromDt" formControlName="startDt" />
+      </label>
+    </p>
+    <p>
+      <label
+        >End Date :
+        <input type="date" name="toDt" formControlName="endDt" />
+      </label>
+    </p>
+    <div *ngIf="progress" class="text-center">
+      <p><b>Downloading Mis...</b></p>
+    </div>
+    <menu>
+      <button
+        class="btn btn-success"
+        id="confirmBtn"
+        (click)="onConfirm()"
+        [disabled]="!form.valid"
+      >
+        Submit
+      </button>
+      <button class="btn btn-danger" value="cancel" (click)="onCancel()">
+        Cancel
+      </button>
+    </menu>
+  </form>
+</dialog>

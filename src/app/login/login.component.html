@@ -1,0 +1,137 @@
+<!-- <section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">Login Now</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="Login">Select Login Type</label>
+            <div style="display: flex;justify-content: space-evenly;">
+              <div>
+                <label>
+                  <input type="radio" name="loginType" value="hrd" (change)="onLoginChange($event.target.value)">HRD
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="loginType" value="domino" (change)="onLoginChange($event.target.value)" checked>Domino
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div *ngIf="selectedLogin === 'hrd'">
+            <div class="form-group" style="text-align: center; margin-top: 4em;">
+              <label for="mobileNumber" class="text-uppercase">Mobile Number</label>
+              <input type="text" class="form-control" placeholder="Enter Mobile Number" name="mobileNumber" [(ngModel)]="mobileNumber">
+            </div>
+            <div class="form-check">
+              <button type="button" (click)="generateOtp()" class="btn btn-sm btn-login float-right">Generate OTP</button>
+            </div>
+            <div class="form-group" *ngIf="showOtp" style="text-align: center; margin-top: 3em;">
+              <label for="OTP" class="text-uppercase">OTP</label>
+              <input type="text" class="form-control" placeholder="Enter OTP" name="OTP" [(ngModel)]="Otp">
+            </div>
+            <div class="form-check" *ngIf="showOtp">
+              <button type="button" (click)="Login()" class="btn btn-sm btn-login float-right" [disabled]="!mobileNumber || !Otp">Login</button>
+            </div>
+          </div>
+
+          <div *ngIf="selectedLogin === 'domino'">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+              <input type="text" class="form-control" placeholder="" name="UserId" [(ngModel)]="UserId">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="password" class="form-control" placeholder="" name="Pwd" [(ngModel)]="Pwd">
+            </div>
+            <div class="form-check">
+              <button type="button" (click)="Login()" class="btn btn-sm btn-login float-right" [disabled]="!UserId || !Pwd">Login</button>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="col-md-8 banner-sec"></div>
+    </div>
+  </div>
+</section> -->
+
+
+<div class="parent clearfix">
+  <div class="bg-illustration">
+    <img src="../../assets/logo10.png" alt="logo" class="newimagelogo">
+
+    <div class="burger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+  
+  <div class="login">
+    <div class="container">
+      <h1 >Login  </h1>
+  
+      <div class="login-form">
+        <form class="login-form">
+          <div class="form-group">
+            <label for="Login">Select Login Type</label>
+            <div style="display: flex;justify-content: space-evenly;">
+              <div>
+                <label>
+                  <input type="radio" name="loginType" value="hrd" (change)="onLoginChange($event.target.value)">HRD
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="loginType" value="domino" (change)="onLoginChange($event.target.value)" checked>Domino
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div *ngIf="selectedLogin === 'hrd'">
+            <div class="form-group" style="text-align: center; margin-top: 4em;">
+              <label for="mobileNumber" class="text-uppercase">Mobile Number</label>
+              <input type="text" class="form-control" placeholder="Enter Mobile Number" name="mobileNumber" [(ngModel)]="mobileNumber">
+            </div>
+            <div class="form-check">
+              <button type="submit" (click)="generateOtp()" class="btn btn-sm btn-login float-right">Generate OTP</button>
+            </div>
+            <div class="form-group" *ngIf="showOtp" style="text-align: center; margin-top: 3em;">
+              <label for="OTP" class="text-uppercase">OTP</label>
+              <input type="text" class="form-control" placeholder="Enter OTP" name="OTP" [(ngModel)]="Otp">
+            </div>
+            <div class="form-check" *ngIf="showOtp">
+              <button type="submit" (click)="Login()" class="btn btn-sm btn-login float-right" [disabled]="!mobileNumber || !Otp">Login</button>
+            </div>
+          </div>
+
+          <div *ngIf="selectedLogin === 'domino'">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+              <input type="text" class="form-control" placeholder="" name="UserId" [(ngModel)]="UserId">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="password" class="form-control" placeholder="" name="Pwd" [(ngModel)]="Pwd">
+            </div>
+            <div class="form-check">
+              <button type="submit" (click)="Login()"  [disabled]="!UserId || !Pwd">LOG-IN</button>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+  
+    </div>
+    </div>
+</div>

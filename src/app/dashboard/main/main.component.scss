@@ -1,0 +1,73 @@
+.border-info {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.my-card {
+  position: absolute;
+  left: 40%;
+  top: -20px;
+  border-radius: 50%;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.white-text-bold {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.no-margin {
+  margin: 10px 0 !important;
+}
+
+.orange {
+  background-color: #ffb800 !important;
+}
+
+.red {
+  background-color: red !important;
+}
+
+.green {
+  background-color: green !important;
+}
+
+#favDialog {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 10px 50px;
+  border-radius: 5px;
+  button {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+#favDialog::backdrop {
+  background: rgba(0, 0, 0, .25);
+}
+.card-blue{
+  background: #0f5ef7 !important;
+}
+.card-red{
+  background: #d55066;
+}
+.sea-green{
+  background: #46d8d5;
+}
+
+
+// left sidebar
+
+
+/******************* MOBILE FIXES END *******************/
